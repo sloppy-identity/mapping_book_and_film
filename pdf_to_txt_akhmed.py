@@ -1,6 +1,9 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import requests
+import os
+import PyPDF2
+import urllib.request
 
 url = 'https://www.simplyscripts.com/movie-screenplays.html'
 driver = webdriver.Chrome()
@@ -10,12 +13,12 @@ try:
     browser = webdriver.Chrome()
     browser.get(url=god)
     url2 = god
-    import urllib.request
+    
     urllib.request.urlretrieve(url2, "fuck.pdf")
     r = requests.get(url2)
     with open("fuck1.pdf", "wb") as code:
         code.write(r.content)
-    import PyPDF2
+    
     file = open('fuck1.pdf', 'rb')
     pdfreader = PyPDF2.PdfFileReader(file, strict=False)
     x = pdfreader.numPages
@@ -27,7 +30,7 @@ try:
         # вместо C://Users//79265//Desktop// нужно вставить свой путь
         file1.writelines(text)
         file1.close()
-    import os
+        
     os.remove('fuck.pdf')
     file.close()
     os.remove('fuck1.pdf')
